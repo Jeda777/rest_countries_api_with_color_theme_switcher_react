@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+}
+body {
+  min-height: 100vh;
+}
+
+.custom-container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 1280px) {
+  .custom-container {
+    padding: 2rem calc(1rem - ((100vw - 1280px) / 2));
+  }
+  span {
+    @apply text-base;
+  }
+}
+
+#select-box {
+  @apply relative;
+}
+
+#select {
+  background: url('./assets/arrow.svg'), white;
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-position: top 26px right 24px;
+  @apply bg-light-elements;
+}
+
+.dark #select {
+  background: url('./assets/arrow-dark.svg');
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-position: top 26px right 24px;
+  @apply bg-dark-elements;
+}
+
+#options-container {
+  top: calc(100% + 4px);
+  height: 0;
+  overflow: hidden;
+  @apply bg-light-elements dark:bg-dark-elements flex flex-col gap-2 w-3/5 lg:w-52 py-0 px-6 rounded-lg absolute transition-all;
+}
+.option {
+  @apply cursor-pointer;
+}
+
+#options-container-active {
+  top: calc(100% + 4px);
+  @apply bg-light-elements dark:bg-dark-elements flex flex-col gap-2 w-3/5 lg:w-52 py-4 px-6 rounded-lg absolute transition-all;
+}
+
+span {
+  @apply font-light;
+}
+
+.country-tile {
+  @apply w-64 bg-light-elements dark:bg-dark-elements text-light-text dark:text-dark-text shadow lg:shadow-md rounded-lg;
+}
+
+.country-tile img {
+  @apply h-36 w-full object-cover rounded-t-lg;
+}

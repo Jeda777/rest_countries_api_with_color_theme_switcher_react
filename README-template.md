@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution](https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-react-p2ORaZjk8L)
+- [Live site](https://dreamy-alpaca-960c54.netlify.app/)
 
 ## Built with
 

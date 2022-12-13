@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import axios from 'axios'
 import Navbar from './components/Navbar'
-import Details from './pages/Details'
-import Home from './pages/Home'
+
+const Details = lazy(() => import('./pages/Details'))
+const Home = lazy(() => import('./pages/Home'))
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false)
@@ -41,11 +42,13 @@ const App = () => {
     <div className={`${darkMode ? 'dark' : ''}`}>
       <div className='min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text'>
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Routes>
-          <Route path='/' element={<Home data={countriesData} />} />
-          <Route path='/:countryName' element={<Details data={countriesData} />} />
-          <Route path='/undefined' element={<Navigate to='/' />} />
-        </Routes>
+        <Suspense fallback={<div id='loading'>Loading...</div>}>
+          <Routes>
+            <Route path='/' element={<Home data={countriesData} />} />
+            <Route path='/:countryName' element={<Details data={countriesData} />} />
+            <Route path='/undefined' element={<Navigate to='/' />} />
+          </Routes>
+        </Suspense>
       </div>
     </div>
   )

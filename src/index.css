@@ -64,7 +64,7 @@ body {
   @apply bg-light-elements dark:bg-dark-elements flex flex-col gap-2 w-3/5 lg:w-52 py-0 px-6 rounded-lg absolute transition-all;
 }
 .option {
-  @apply cursor-pointer;
+  @apply text-left;
 }
 
 #options-container-active {

@@ -16,68 +16,77 @@ const HomeFilters = ({ setTextFilter, regionFilter, setRegionFilter, regionFilte
         />
       </div>
       <div id='select-box'>
-        <div
+        <button
           id='select'
-          className='w-3/5 lg:w-52 py-5 px-6 rounded-lg cursor-pointer shadow-sm lg:shadow'
+          className='w-3/5 lg:w-52 py-5 px-6 rounded-lg cursor-pointer shadow-sm lg:shadow text-left'
           onClick={() => setRegionFilterOpen((prev) => !prev)}
         >
           {regionFilter === '' ? 'Filter by Region' : regionFilter}
-        </div>
-        <div id={regionFilterOpen ? 'options-container-active' : 'options-container'}>
-          <p
+        </button>
+        <div
+          id={regionFilterOpen ? 'options-container-active' : 'options-container'}
+          inert={!regionFilterOpen ? 'true' : undefined}
+        >
+          <button
             className='option'
             onClick={() => {
               setRegionFilterOpen(false)
               setRegionFilter('')
             }}
+            tabindex={0}
           >
             Filter by Region
-          </p>
-          <p
+          </button>
+          <button
             className='option'
             onClick={() => {
               setRegionFilterOpen(false)
               setRegionFilter('Africa')
             }}
+            tabindex={0}
           >
             Africa
-          </p>
-          <p
+          </button>
+          <button
             className='option'
             onClick={() => {
               setRegionFilterOpen(false)
               setRegionFilter('Americas')
             }}
+            tabindex={0}
           >
             Americas
-          </p>
-          <p
+          </button>
+          <button
             className='option'
             onClick={() => {
               setRegionFilterOpen(false)
               setRegionFilter('Asia')
             }}
+            tabindex={0}
           >
             Asia
-          </p>
-          <p
+          </button>
+          <button
             className='option'
             onClick={() => {
               setRegionFilterOpen(false)
               setRegionFilter('Europe')
             }}
+            tabindex={0}
           >
             Europe
-          </p>
-          <p
+          </button>
+          <button
             className='option'
             onClick={() => {
               setRegionFilterOpen(false)
               setRegionFilter('Oceania')
             }}
+            tabindex={0}
           >
             Oceania
-          </p>
+          </button>
         </div>
       </div>
     </div>

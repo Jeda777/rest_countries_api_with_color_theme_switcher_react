@@ -3,7 +3,10 @@ import { HiSearch } from 'react-icons/hi'
 const HomeFilters = ({ setTextFilter, regionFilter, setRegionFilter, regionFilterOpen, setRegionFilterOpen }) => {
   return (
     <div className='flex justify-center flex-col gap-10 lg:flex-row lg:justify-between lg:gap-0 lg:items-center'>
-      <div className='flex gap-6 bg-light-elements dark:bg-dark-elements px-7 lg:px-8 py-4 rounded-lg shadow-sm lg:shadow'>
+      <div
+        className='flex gap-6 bg-light-elements dark:bg-dark-elements px-7 lg:px-8 py-4 rounded-lg shadow-sm lg:shadow
+      focus-within:outline'
+      >
         <HiSearch className='text-2xl' />
         <input
           type='text'

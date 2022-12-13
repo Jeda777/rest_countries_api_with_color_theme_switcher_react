@@ -52,7 +52,7 @@ const Details = ({ data }) => {
         <Link
           to='/'
           className='bg-light-elements dark:bg-dark-elements flex items-center gap-2 w-max px-6 py-2 rounded
-        shadow-md'
+        shadow-md transition-all duration-300 hover:opacity-50'
         >
           <HiArrowNarrowLeft className='text-2xl' />
           Back
@@ -99,7 +99,8 @@ const Details = ({ data }) => {
                     <Link
                       to={`/${i.code}`}
                       key={i.code}
-                      className='font-light text-sm xl:text-base px-6 py-2 bg-light-elements dark:bg-dark-elements w-max rounded-md shadow-md'
+                      className='font-light text-sm xl:text-base px-6 py-2 bg-light-elements dark:bg-dark-elements w-max
+                      rounded-md shadow-md transition-all duration-300 hover:opacity-50'
                     >
                       {i.name}
                     </Link>

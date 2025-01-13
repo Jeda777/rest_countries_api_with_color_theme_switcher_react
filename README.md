@@ -1,52 +1,88 @@
-# Frontend Mentor - REST Countries API with color theme switcher solution
+# Dokumentacja projektu: REST Countries API
 
-This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+## Wprowadzenie
 
-## Table of contents
+Ten projekt to aplikacja frontendowa oparta na frameworku **React**, zbudowana przy użyciu **Vite** jako narzędzia do budowania, **Tailwind CSS** do stylizacji oraz biblioteki **Axios** do komunikacji z REST API. Aplikacja korzysta z publicznego API [REST Countries](https://restcountries.com/) w celu wyświetlania informacji o krajach.
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [Built with](#built-with)
-- [Author](#author)
+---
 
-## Overview
+## Funkcjonalności
 
-### The challenge
+1. **Wyświetlanie listy krajów**:
+   - Aplikacja pobiera dane o krajach z API REST Countries i wyświetla je w formie kart.
+2. **Szczegóły kraju**:
+   - Użytkownik może kliknąć na kartę kraju, aby przejść do szczegółowych informacji o nim.
+3. **Filtrowanie i wyszukiwanie**:
+   - Możliwość filtrowania krajów według regionu.
+   - Wyszukiwanie krajów według nazwy.
+4. **Przełącznik motywu kolorystycznego**:
+   - Przełączanie między trybem jasnym i ciemnym.
 
-Users should be able to:
+---
 
-- See all countries from the API on the homepage
-- Search for a country using an `input` field
-- Filter countries by region
-- Click on a country to see more detailed information on a separate page
-- Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode _(optional)_
+## Technologie i narzędzia
 
-### Screenshot
+### 1. **Framework: React**
 
-![](./Screenshot.png)
+React został użyty jako główna biblioteka do budowy interfejsu użytkownika dzięki swojej komponentowej architekturze, która pozwala na łatwe zarządzanie stanem i ponowne użycie kodu.
 
-### Links
+#### Architektura projektu
 
-- [Solution](https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-react-p2ORaZjk8L)
-- [Live site](https://dreamy-alpaca-960c54.netlify.app/)
+Projekt jest zorganizowany zgodnie z następującą strukturą:
 
-## Built with
+```
+/src
+ |-- /components     # Komponenty wielokrotnego użytku
+ |-- /pages          # Widoki odpowiadające poszczegęlnym podstronom
+ |-- main.jsx        # Punkt wejścia aplikacji
+ |-- App.jsx         # Główny komponent aplikacji
+ |-- index.css       # Główny plik css
+```
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [Vite](https://vitejs.dev/) - Environment set up
-- [React](https://reactjs.org/) - JS library
-- [Tailwind](https://tailwindcss.com/) - For styles
-- [REST Countries](https://restcountries.com/) - Countries API
-- [Axios](https://axios-http.com/) - API Requests
+### 2. **Vite**
 
-## Author
+Vite został wybrany jako narzędzie do budowania projektu ze względu na:
 
-- Website - [Jakub Jęda](https://github.com/Jeda777)
-- Frontend Mentor - [@Jeda777](https://www.frontendmentor.io/profile/Jeda777)
+- Bardzo szybkie odświeżanie podczas developmentu (hot module replacement).
+- Nowoczesny ekosystem i wsparcie dla Reacta oraz Tailwinda.
+
+### 3. **Tailwind CSS**
+
+Tailwind CSS zapewnia elastyczny system klas pomocniczych, które pozwalają na szybkie i intuicyjne stylowanie komponentów. Użycie Tailwinda przyspieszyło proces tworzenia UI dzięki:
+
+- Gotowym klasom do responsywnego projektowania.
+- Możliwości łatwej personalizacji motywu (np. tryb jasny/ciemny).
+
+### 4. **Axios**
+
+Axios to biblioteka do obsługi żądań HTTP, która została użyta do komunikacji z REST API. Zalety Axiosa to:
+
+- Obsługa obietnic (promises).
+- Łatwe zarządzanie nagłówkami żądań.
+
+### 5. **REST API**
+
+Projekt korzysta z publicznego API REST Countries, które udostępnia dane o krajach, takie jak:
+
+- Nazwa kraju.
+- Flaga.
+- Stolica.
+- Region.
+- Populacja.
+- Języki.
+- Granice.
+
+---
+
+## Wykorzystane funkcjonalności
+
+### a. Routery kierujące ruchem HTTP
+
+Do zarządzania routingiem wykorzystano bibliotekę **React Router**, która pozwala na:
+
+- Nawigację między stronami (lista krajów, szczegóły kraju).
+- Obsługę parametrów URL (np. `/:countryName`).
+
+### b. Współpraca z REST API
+
+Komunikacja z REST API odbywa się za pomocą biblioteki Axios. Dane są pobierane i zapisywane w lokalnym stanie komponentów za pomocą **useState** i **useEffect**.
